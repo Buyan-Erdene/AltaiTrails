@@ -1,0 +1,168 @@
+:root{
+    --backgroundcolor: rgb(230, 230, 230);
+    --sectioncolor: rgb(250, 250, 250);
+    --garchigcolor: rgb(176, 176, 176);
+    --fontcolor: black;
+    --maincolor: #FD9545;
+    --darkfont: white;
+    --darkbackground: #2e2e2e;
+    --darksection: #3b3b3b;
+    --darkfontsoft: rgb(212, 212, 212);
+}
+
+main{
+    padding-top: 50px;
+    display: flex;
+    background-color: var(--backgroundcolor);
+}
+.zuun{
+    padding: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: var(--sectioncolor);
+    gap: 10px;
+    height: 60%;
+}
+
+.zuun ul li{
+    list-style: none;
+}
+.zuun ul li a{
+    color: var(--fontcolor);
+}
+.garchig{
+    background-color: var(--garchigcolor);
+    font-size: 15px;
+}
+
+.baruun{
+    margin: 20px;
+    width: 70%;
+}
+.searchmain{
+    background-color: var(--sectioncolor);
+}
+
+.searchmain nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 30px;
+    font-size: 15px;
+}
+
+.searchmain nav ul li{
+    list-style: none;
+}
+.searchmain nav ul li a{
+    text-decoration: none;
+    color: var(--fontcolor);
+}
+
+.aylluud{
+    margin-top: 30px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: auto auto;
+        padding: 10px;
+}
+article{
+    background-color: var(--sectioncolor);
+}
+article img{
+    height: 200px;
+    width: 100%;
+}
+article a{
+    text-decoration: none;
+    color: var(--fontcolor);
+}
+article a h2, p{
+    padding-left: 10px;
+}
+.doodheseg{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+article button{
+    border-color: var(--maincolor);
+    color: var(--maincolor);
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+article button:hover{
+    border-color: var(--maincolor);
+    color: var(--darkfont);
+    background-color: var(--maincolor);
+}
+
+.heart {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+.iconheart {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease; 
+    display: inline-block;
+    color: var(--maincolor);
+  }
+  
+  .heart:hover .iconheart {
+    transform: scale(1.5);
+  }
+
+
+/* darkmode */
+
+body.darkmode main{
+    background-color: var(--darkbackground);
+    color: var(--darkfont);
+}
+
+  .zuun, .baruun {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.darkmode .zuun,
+body.darkmode .searchmain,
+body.darkmode article {
+    background-color: var(--darksection);
+    color: var(--darkfontsoft);
+}
+
+body.darkmode .garchig{
+    background-color: var(--darkbackground);
+}
+
+body.darkmode section a{
+    color: var(--darkfontsoft);
+}
+
+body.darkmode ul li a{
+    color: var(--darkfontsoft);
+}
+
+  
+
+
+
+
+  .aylluud article[style="display: none;"] {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+  }
+
+
+
+
+
+  
