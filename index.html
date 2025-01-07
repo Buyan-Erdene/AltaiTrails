@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AltaiTrails.mn</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
     <header class="header">
         <div class="header-left">
             <a href="index.html"><img src="logo.png" class="logo">
@@ -123,29 +124,113 @@
 </section>
 
 <footer>
-    <div class="footer-links">
-        <div>
-            <p>AltaiTrails.mn</p>
-            <a href="#">Бидний тухай</a><br>
-            <a href="#">Үйлчилгээний нөхцөл</a><br>
-            <a href="#">Нууцлалын бодлого</a>
+    <div class="footerheseg">
+        <div class="footer-section">
+            <div class="footer-header">
+                <h3 class="footergarchig">Joinme.mn</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="footer-content">
+                <ul>
+                    <li><a href="#">Бидний тухай</a></li>
+                    <li><a href="#">Үйлчилгээний нөхцөл</a></li>
+                    <li><a href="#">Нууцлалын бодлого</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <p>Тусламж</p>
-            <a href="#">Аялал хэрхэн захиалах вэ?</a><br>
-            <a href="#">Аялалын төлбөрийн боломжууд</a><br>
-            <a href="#">Байгууллага хамт олны аялал</a>
+
+        <div class="footer-section">
+            <div class="footer-header">
+                <h3 class="footergarchig">Тусламж</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="footer-content">
+                <ul>
+                    <li><a href="#">Аялал хэрхэн захиалах вэ?</a></li>
+                    <li><a href="#">Аялалын төлбөрийн боломжууд</a></li>
+                    <li><a href="#">Байгууллага хамт олны аялал</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <p>Хаяг</p>
-            <p>Улаанбаатар</p>
-            <p>холбоо барих</p>
-            <a href="www.instagram.com">Instagram: @Altaitrails_</a><br>
-            <a href="www.facebook.com">Facebook: Altaitrails</a><br>
-            <a href="+97699999999">Утас:9999999</a>
+
+        <div class="footer-section">
+            <div class="footer-header">
+                <h3 class="footergarchig">Миний булан</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="footer-content">
+                <ul>
+                    <li><a href="#">Улаанбаатар</a></li>
+                    <li><a href="#">Холбоо барих</a></li>
+                    <li><a href="#">Instagram: @Altaitrails_</a></li>
+                    <li><a href="#">Facebook: Altaitrails</a></li>
+                    <li><a href="#">Утас: 9999999</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <div class="copyright">
+        © 2025. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН
+    </div>
 </footer>
+
+
+<!-- mobile hesgiin html -->
+
+<nav class="mobile-header">
+    <ul class="menu">
+        <li>
+            <button id="dark-mode-mobile" class="dark-mode-btn">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon" style="display: none;">🌙</span>
+            </button>
+        </li>
+        <li>
+            <a href="login.html" class="login">
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="svg">
+                        <path
+                            d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
+                        </path>
+                    </svg></i>
+                <span>
+                    Нэвтрэх
+                </span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="mobile-nav">
+    <ul>
+        <li>
+            <a href="index.html" class="active">
+                <span class="icon">🏠</span>
+                <span>Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="search.html">
+                <span class="icon">🔍</span>
+                <span>Хайх</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon">📝</span>
+                <span>Блог</span>
+            </a>
+        </li>
+        <li>
+            <a href="hadgalsan.html">
+                <span class="icon">❤️</span>
+                <span>Хадгалсан</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<script src="java.js"></script>
 
 </body>
 </html>
