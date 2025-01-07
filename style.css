@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Ubuntu", serif;
 }
 
 :root {
@@ -17,6 +17,8 @@
   --darkheader: #3b3b3b;
   --menufontsize: 1rem;
 }
+
+
   
 /* header heseg */
 
@@ -226,6 +228,11 @@ body.darkmode .menu li a:hover {
     .mobile-header ul{
         display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-header ul li{
+      display: flex;
       align-items: center;
     }
   

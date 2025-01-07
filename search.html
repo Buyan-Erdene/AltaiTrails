@@ -7,6 +7,8 @@
     <title>AltaiTrails.mn - Аялал</title>
     <link rel="stylesheet" href="searchstyle.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -88,16 +90,17 @@
 
             <label for="location">Аялах Газар</label>
             <select id="location">
-                <option value="altai">Altai</option>
-                <option value="gobi">Gobi</option>
+                <option value="ulaanbaatar">Улаанбаатар</option>
+                    <option value="erdenet">Эрдэнэт</option>
+                    <option value="darkhan">Дархан</option>
             </select>
 
             <label class="garchig" for="tour-type">Аяллын төрөл</label>
             <select id="tour-type">
-                <option value="adventure">Адал явдалт</option>
-                <option value="family">Гэр бүлийн</option>
+                <option value="adalyavdalt">Адал явдалт</option>
+                <option value="gerbuliin">Гэр бүлийн</option>
                 <option value="Group">Групп аялал</option>
-                <option value="kids">Хүүхдийн аялал</option>
+                <option value="huuhdiin">Хүүхдийн аялал</option>
             </select>
 
             <label class="garchig" for="price">Үнэ: <span id="price-value">500000</span> ₮</label>
@@ -105,18 +108,6 @@
         </aside>
 
         <section class="baruun">
-            <section class="searchmain">
-                <nav>
-                    <ul>
-                        <li>
-                            <h2>Эрэмбэлэх:</h2>
-                        </li>
-                        <li><a href="#">Шинэ</a></li>
-                        <li><a href="#">Үнэ</a></li>
-                        <li><a href="#">Хямдралтай</a></li>
-                    </ul>
-                </nav>
-            </section>
 
             <section class="aylluud">
                 <article data-category="tour" data-month="july" data-location="altai" data-type="adventure"
@@ -235,7 +226,7 @@
     </footer>
 
 
-    <!-- mobile hesgiin html -->
+    <!-- mobile hesgiin html menu -->
 
     <nav class="mobile-header">
         <ul class="menu">
@@ -246,9 +237,12 @@
                 </button>
             </li>
             <li>
+                <img src="logo.png" class="logo">
+                <span class="logoname">AltaiTrails.mn</span>
+            </li>
+            <li>
                 <a href="login.html" class="login">
-                    <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            class="svg">
+                    <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="svg">
                             <path
                                 d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
                             </path>
@@ -269,14 +263,14 @@
                     <span>Home</span>
                 </a>
             </li>
-            <li>
-                <a href="search.html">
+            <li class="searchmobi">
+                <a href="#">
                     <span class="icon">🔍</span>
                     <span>Хайх</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="blog.html">
                     <span class="icon">📝</span>
                     <span>Блог</span>
                 </a>
@@ -289,6 +283,114 @@
             </li>
         </ul>
     </nav>
+
+    <!-- mobile search body heseg -->
+
+
+    <div class="search-mobile">
+        <div class="search-header">
+            <div style="position: relative;">
+                <input type="text" class="search-input" placeholder="Хайх">
+            </div>
+        </div>
+
+        <div class="recent-searches">
+            <ul class="category-list">
+                <li>
+                    <a href="#" class="category-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            >
+                            <path
+                                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
+                            </path>
+                            <path d="m8 16 5.991-2L16 8l-6 2z"></path>
+                        </svg>
+                        Аялал
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="category-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            >
+                            <path
+                                d="M18 8.31c-.36-.41-.73-.82-1.12-1.21l-.29-.27.14-.12a3.15 3.15 0 0 0 .9-3.49A3.91 3.91 0 0 0 14 1v2a2 2 0 0 1 1.76 1c.17.4 0 .84-.47 1.31-.07.08-.15.13-.22.2-3-2.41-6.29-3.77-7.9-2.16a2.16 2.16 0 0 0-.41.59v.1l-.18.53-4.41 13.1A3.28 3.28 0 0 0 5.28 22a3.21 3.21 0 0 0 1-.17L20 17.28a1 1 0 0 0 .43-.31l.21-.18c1.43-1.44.51-4.21-1.41-6.9A6.63 6.63 0 0 1 23 9V7a8.44 8.44 0 0 0-5 1.31zM5.7 19.93a1.29 1.29 0 0 1-1.63-1.63l1.36-4.1a10.7 10.7 0 0 0 4.29 4.39zm7-2.33a8.87 8.87 0 0 1-6.3-6.29l1-3 .06.09c.11.22.25.45.39.68s.16.29.26.44.33.48.51.73.19.28.3.42.43.55.66.82l.29.35c.34.39.7.77 1.08 1.16s.68.64 1 1l.33.28.78.63.37.28c.28.2.55.4.83.58l.31.2c.36.22.72.43 1.07.61h.05zm6.51-2.23h-.06c-.69.38-3.56-.57-6.79-3.81-.34-.34-.66-.67-.95-1l-.29-.35-.53-.64-.29-.4c-.13-.19-.27-.37-.39-.55l-.26-.42-.29-.47c-.08-.14-.14-.27-.21-.4s-.15-.26-.21-.4a3.31 3.31 0 0 1-.14-.36c-.05-.13-.11-.26-.15-.38S8.6 6 8.57 5.88s-.05-.22-.07-.32a2.26 2.26 0 0 1 0-.26 1 1 0 0 1 0-.24l.11-.31c.36-.36 2.23 0 4.73 1.9A4.13 4.13 0 0 1 12 7v2a6.45 6.45 0 0 0 3-.94l.48.46c.42.42.81.85 1.18 1.28a5.32 5.32 0 0 0-.6 3.4l2-.39a3.57 3.57 0 0 1 0-1.12 11.3 11.3 0 0 1 .81 1.45c.56 1.32.52 2.06.34 2.23z">
+                            </path>
+                        </svg>
+                        Эвент
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="category-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            >
+                            <path d="M19 4H6V2H4v18H3v2h4v-2H6v-5h13a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 9H6V6h12v7z">
+                            </path>
+                        </svg>
+                        Tour
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="category-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            >
+                            <path
+                                d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z">
+                            </path>
+                        </svg>
+                        Camp
+                    </a>
+                </li>
+            </ul>
+
+            <div class="selectsearch">
+                <select class="month select">
+                    <option value="" disabled selected>Аялах сараа сонгох</option>
+                    <option value="january">1-р сар</option>
+                    <option value="february">2-р сар</option>
+                    <option value="march">3-р сар</option>
+                    <option value="april">4-р сар</option>
+                    <option value="may">5-р сар</option>
+                    <option value="june">6-р сар</option>
+                    <option value="july">7-р сар</option>
+                    <option value="august">8-р сар</option>
+                    <option value="september">9-р сар</option>
+                    <option value="october">10-р сар</option>
+                    <option value="november">11-р сар</option>
+                    <option value="december">12-р сар</option>
+                </select>
+
+                <label class="garchig" for="duration">Үргэлжлэх Хугацаа: <span id="duration-value">15</span> хоног</label>
+            <input class="duration select" type="range" id="duration" name="duration" min="1" max="30" value="15">
+
+                <select class="location select">
+                    <option value="" disabled selected>Аялах газар сонгох</option>
+                    <option value="ulaanbaatar">Улаанбаатар</option>
+                    <option value="erdenet">Эрдэнэт</option>
+                    <option value="darkhan">Дархан</option>
+                </select>
+
+                <select class="type select">
+                    <option value="" disabled selected>Төрөл сонгох</option>
+                    <option value="adalyavdalt">Адал явдалт</option>
+                <option value="gerbuliin">Гэр бүлийн</option>
+                <option value="Group">Групп аялал</option>
+                <option value="huuhdiin">Хүүхдийн аялал</option>
+                </select>
+
+                <label class="garchig" for="price">Үнэ: <span id="price-value">500000</span> ₮</label>
+            <input class="price select" type="range" id="price" name="price" min="50000" max="1000000" value="500000">
+            </div>
+
+            <button class="search-button">
+                ХАЙХ
+            </button>
+
+            <button class="close-button">
+                X
+            </button>
+        </div>
+    </div>
+
     <script src="java.js"></script>
     <script src="searchjava.js"></script>
 </body>

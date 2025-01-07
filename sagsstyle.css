@@ -1,0 +1,144 @@
+:root{
+    --backgroundcolor: rgb(230, 230, 230);
+    --sectioncolor: white;
+    --garchigcolor: rgb(176, 176, 176);
+    --fontcolor: black;
+    --maincolor: #FD9545;
+    --darkfont: white;
+    --darkbackground: #2e2e2e;
+    --darksection: #646464;
+}
+
+main {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--backgroundcolor);
+}
+
+section {
+    width: 60%;
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--sectioncolor);
+    border-radius: 1rem;
+}
+
+aside {
+    width: 35%;
+    padding: 2rem;
+    background-color: var(--sectioncolor);
+    border-radius: 1rem;
+    margin-top: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+fieldset {
+    border: none;
+    margin: 10px 0;
+    display: flex;
+    gap: 1rem;
+}
+
+fieldset label {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+form input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+aside h2 {
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+
+aside ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+aside ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1em;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--maincolor);
+    color: var(--darkfont);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.back-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--darksection);
+    color: var(--darkfont);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* darkmode */
+body.darkmode main{
+    background-color: var(--darkbackground);
+    color: var(--darkfont);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+body.darkmode section,
+body.darkmode aside {
+    background-color: var(--darksection);
+    color: var(--darkfont);
+}
+
+body.darkmode a{
+    color: var(--darkfont);
+}
+
+body.darkmode .back-btn{
+    background-color: var(--sectioncolor);
+    color: var(--fontcolor);
+}
+
+@media screen and (max-width: 768px) {
+    main{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    main section{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    main aside{
+        width: 100%;
+        margin-top: 0;
+    }
+}

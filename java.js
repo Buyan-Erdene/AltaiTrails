@@ -55,3 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// search mobile garch ireh
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchLink = document.querySelector('.searchmobi');
+  const searchMobile = document.querySelector('.search-mobile');
+  const closeButton = document.querySelector('.close-button');
+
+  searchLink.addEventListener('click', (event) => {
+      searchMobile.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', () => {
+      searchMobile.style.display = 'none';
+  });
+});
