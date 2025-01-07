@@ -1,0 +1,61 @@
+.nuur{
+    height: 600px;
+    background-image: url("nuur.jpg") ;
+    background-size: cover;
+}
+
+.ontsloh{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zuraas{
+    height: 1px;
+    width: 70%;
+    background-color: rgb(141, 102, 79);
+}
+   
+.tours{
+    margin-top: 50px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+}
+.aylal img{
+    height: 300px;
+    width: 400px;
+}
+.aylal a{
+    text-decoration: none;
+    color: black;
+}
+.aylal button{
+    float: right;
+    border-color: rgb(141, 102, 79);
+    color: rgb(141, 102, 79);
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 30%;
+    margin: 10px;
+}
+
+.tovchluur{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tovchluur button{
+    border-color: rgb(141, 102, 79);
+    color: white;
+    background-color: rgb(141, 102, 79);
+    padding: 10px;
+    border-radius: 30%;
+    margin: 10px;
+}
+
+
+
+
