@@ -22,7 +22,7 @@
                 <li>
                     <input type="text" placeholder="Хайх.." class="search">
                 </li>
-                <li><a href="search.html" class="aylal">Аялал</a></li>
+                <li><a href="search.html" class="aylalhaih">Аялал</a></li>
                 <li><a href="#" class="blog">Блог</a></li>
                 <li><a href="hadgalsan.html" class="hadgalsan">
                         <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -62,14 +62,9 @@
     <main>
         <aside class="zuun">
             <h2 class="garchig">Ангилал</h2>
-            <ul>
-                <li><a href="#">Аялал</a></li>
-                <li><a href="#">Эвэнт</a></li>
-                <li><a href="#">Tour</a></li>
-                <li><a href="#">Camp</a></li>
-            </ul>
             <label class="garchig" for="travel-month">Аялах сар</label>
             <select id="travel-month">
+                <option value="">Аялах сараа сонгоно уу</option>
                 <option value="january">1-р сар</option>
                 <option value="february">2-р сар</option>
                 <option value="march">3-р сар</option>
@@ -87,88 +82,33 @@
             <label class="garchig" for="duration">Үргэлжлэх Хугацаа: <span id="duration-value">15</span> хоног</label>
             <input type="range" id="duration" name="duration" min="1" max="30" value="15">
 
-
-            <label for="location">Аялах Газар</label>
+            <label class="garchig" for="location">Аялах Газар</label>
             <select id="location">
-                <option value="ulaanbaatar">Улаанбаатар</option>
-                    <option value="erdenet">Эрдэнэт</option>
-                    <option value="darkhan">Дархан</option>
+                <option value="">Аялах газраа сонгоно уу</option>
+                <option value="Ulaanbaatar">Улаанбаатар</option>
+                    <option value="Erdenet">Эрдэнэт</option>
+                    <option value="Darkhan">Дархан</option>
+                    <option value="Altai">Алтай</option>
+                    <option value="Gobi">Говь</option>
             </select>
-
-            <label class="garchig" for="tour-type">Аяллын төрөл</label>
-            <select id="tour-type">
-                <option value="adalyavdalt">Адал явдалт</option>
-                <option value="gerbuliin">Гэр бүлийн</option>
-                <option value="Group">Групп аялал</option>
-                <option value="huuhdiin">Хүүхдийн аялал</option>
+    
+            <label class="garchig" for="type">Аяллын төрөл</label>
+            <select id="type">
+                <option value="">Аяллын төрлөө сонгоно уу</option>
+                <option value="adventure">Адал явдалт</option>
+                <option value="family">Гэр бүлийн</option>
+                <option value="group">Групп аялал</option>
+                <option value="kids">Хүүхдийн аялал</option>
             </select>
-
+    
             <label class="garchig" for="price">Үнэ: <span id="price-value">500000</span> ₮</label>
             <input type="range" id="price" name="price" min="50000" max="1000000" value="500000">
         </aside>
 
         <section class="baruun">
-
-            <section class="aylluud">
-                <article data-category="tour" data-month="july" data-location="altai" data-type="adventure"
-                    data-price="4200000" data-duration="7">
-                    <a href="aylal.html">
-                        <img src="aylal.jpg" alt="Tour Image">
-                        <h2>Хайнан арлын аялал</h2>
-                        <p>📍 Altai</p>
-                        <p>⏳7 хоног</p>
-                        <p>💰 4'200'000</p>
-                    </a>
-                    <span class="doodheseg">
-                        <a href="hadgalsan.html" class="heart"><span class="iconheart">🧡</span></a>
-                        <a href="sags.html"><button>Захиалах</button></a>
-                    </span>
-                </article>
-
-                <article data-category="event" data-month="june" data-location="gobi" data-type="family"
-                    data-price="3500000" data-duration="5">
-                    <a href="aylal.html">
-                        <img src="aylal.jpg" alt="Event Image">
-                        <h2>Говь гэр бүлийн эвент</h2>
-                        <p>📍 Gobi</p>
-                        <p>⏳5 хоног</p>
-                        <p>💰 3'500'000</p>
-                    </a>
-                    <span class="doodheseg">
-                        <a href="hadgalsan.html" class="heart"><span class="iconheart">🧡</span></a>
-                        <a href="sags.html"><button>Захиалах</button></a>
-                    </span>
-                </article>
-
-                <article>
-                    <a href="aylal.html">
-                        <img src="aylal.jpg" alt="Tour Image">
-                        <h2>Хайнан арлын аялал</h2>
-                        <p>📍 Хятад</p>
-                        <p>⏳7 хоног</p>
-                        <p>💰 4'200'000</p>
-                    </a>
-                    <span class="doodheseg">
-                        <a href="hadgalsan.html" class="heart"><span class="iconheart">🧡</span></a>
-                        <a href="sags.html"><button>Захиалах</button></a>
-                    </span>
-                </article>
-
-                <article>
-                    <a href="aylal.html">
-                        <img src="aylal.jpg" alt="Tour Image">
-                        <h2>Хайнан арлын аялал</h2>
-                        <p>📍 Хятад</p>
-                        <p>⏳7 хоног</p>
-                        <p>💰 4'200'000</p>
-                    </a>
-                    <span class="doodheseg">
-                        <a href="hadgalsan.html" class="heart"><span class="iconheart">🧡</span></a>
-                        <a href="sags.html"><button>Захиалах</button></a>
-                    </span>
-                </article>
-
-            </section>
+            <div id="aylluud">
+                
+            </div>
         </section>
     </main>
 
@@ -392,7 +332,7 @@
     </div>
 
     <script src="java.js"></script>
-    <script src="searchjava.js"></script>
+    <script type="module" src="./aylalSearch.js"></script>
 </body>
 
 </html>
