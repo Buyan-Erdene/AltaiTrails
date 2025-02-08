@@ -102,11 +102,11 @@
             <li>
                 <span>Аяллын нэр</span> 
                 <span>x1</span> 
-                <span>Үнэ</span>
+                <span class="order-summary">Үнэ</span>
             </li>
             <li>
                 <span>Нийт:</span>
-                <span>Үнэ</span>
+                <span class="order-summary">Үнэ</span>
             </li>
         </ul>
         <button type="submit" class="buy-btn">Худалдан авах</button>
@@ -225,6 +225,23 @@
     </ul>
 </nav>
 <script src="java.js"></script>
+
+
+<script>
+    // Function to get query parameters from the URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+  
+    // Get the price from the query parameter
+    const price = getQueryParam('price');
+  
+    // Update the order summary with the price
+    if (price) {
+      document.querySelector('.order-summary span:nth-child(2)').textContent = `${parseInt(price).toLocaleString()} ₮`;
+    }
+  </script>
 
 </body>
 </html>

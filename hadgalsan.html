@@ -60,20 +60,22 @@
         <section class="zuun">
             <section class="deedheseg">
                 <h1>Хадгалсан аяллууд</h1>
-                <button class="hoosloh">🗑️ Хоослох</button>
+                <button id="delete-all" class="delete-all-button">🗑️ Хоослох</button>
             </section>
 
-            <div id="aylluud">
-                
-            </div>
+            <!-- Hadgalsan aylluud garah heseg -->
+    <div id="hadgalsan-items">
+
+      </div>
         </section>
         <section class="baruun">
             <aside class="zahialga">
                 <h2>Захиалгын мэдээлэл</h2>
                 <ul>
                     <li>
-                        <span>Нийт:</span> 
-                        <span class="niitUne">0₮</span>
+                        <div class="total-price-container">
+        <h3>Нийт үнэ: <span id="total-price">0</span> ₮</h3>
+      </div>
                     </li>
                     <li>
                         <a href="sags.html"><button class="tovchluur">Төлбөр төлөх</button></a>
@@ -193,9 +195,14 @@
             </li>
         </ul>
     </nav>
-    <script src="java.js"></script>
-    <script src="hadgalsan.js" async></script>
 
+
+
+
+    <!-- JavaScript -->
+  
+    <script type="module" src="hadgalsan.js"></script>
+    <script src="java.js"></script>
     
 </body>
 </html>

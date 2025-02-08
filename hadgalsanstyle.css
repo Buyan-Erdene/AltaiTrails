@@ -36,16 +36,51 @@ article{
     display: flex;
     border-radius: 1rem;
 }
-article img{
+
+.baraa a {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+}
+
+.baraa img{
     height: 12rem;
     width: 30%;
     border-radius: 1rem;
 }
-.tailbar{
-    padding: 10px;
+
+.baraa .garchig {
+    display: flex;
+    flex-direction: column;
 }
 
-.tovchluur{
+.baraa .itemTitle {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--fontcolor)
+}
+
+.baraa .medeelel {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+}
+
+.baraa .itemDescription,
+.baraa .itemLocation,
+.baraa .itemDuration,
+.baraa .itemPrice {
+    font-size: 1rem;
+    color: var(--fontcolor);
+}
+
+.baraa .doodheseg {
+    display: flex;
+    align-items: end;
+}
+
+.ustgahTovch{
     right: 0;
     border-color: var(--maincolor);
     color: var(--maincolor);
@@ -55,17 +90,18 @@ article img{
     margin: 1rem;
 }
 
-.tovchluur:hover{
+.ustgahTovch:hover{
     border-color: var(--maincolor);
     color: var(--darkfont);
     background-color: var(--maincolor);
 }
+
 .baruun{
     width: 30%;
     margin-top: 4rem;
-}
-
-.zahialga{
+    }
+    
+    .zahialga{
     width: 100%;
     background-color: var(--sectioncolor);
     border-radius: 1rem;
@@ -86,7 +122,7 @@ body.darkmode main{
     color: var(--darkfont);
 }
 
-  .zuun, .baruun {
+.zuun, .baruun {
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -123,4 +159,17 @@ body.darkmode a{
         align-items: center;
         margin-top: 0;
     }
+
+  .baraa a {
+    flex-direction: column;
+  }
+  
+  .baraa img {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .baraa .info-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
