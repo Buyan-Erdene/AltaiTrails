@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", serif;
+}
+
+:root {
+--main: #FD9545;
+--headercolor: rgb(250, 250, 250);
+--backgroundcolor: #e0e0e0;
+--darkbackground: #1c1c1c;
+--fontcolor: #171717;
+--darkfont: #fff;
+--footerfont: rgb(112, 112, 112);
+--darkfontsoft: rgb(212, 212, 212);
+--darkheader: #3b3b3b;
+--menufontsize: 1rem;
+}
+
+
+
+/* header heseg */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--headercolor);
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+}
+
+.header-left a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.hadgalsan, .login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg {
+  fill: var(--fontcolor);
+  transition: fill 0.3s ease;
+}
+
+.hadgalsan:hover .svg, .login:hover .svg {
+  fill: var(--main);
+}
+
+
+
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logoname {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--fontcolor);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: var(--menufontsize);
+  color: var(--fontcolor);
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: var(--main);
+}
+
+
+.footerheseg a:hover {
+  color: var(--main);
+}
+
+.header-right ul{
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.dark-mode-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--fontcolor);
+  transition: color 0.3s;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* footer heseg */
+
+footer{
+  background-color: var(--headercolor);
+  font-size: var(--menufontsize);
+  padding: 15px 130px;
+}
+
+.footerheseg{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+}
+.footerheseg ul{
+  list-style: none;
+}
+
+.footerheseg a{
+  text-decoration: none;
+  color: var(--footerfont);
+}
+
+.footergarchig{
+  color: var(--fontcolor);
+  padding-bottom: 10px;
+}
+
+
+/* Dark Mode*/
+
+body.darkmode .header .logoname,
+body.darkmode .menu li a,
+body.darkmode .footergarchig,
+body.darkmode .svg{
+color: var(--darkfont);
+fill: var(--darkfont);
+}
+
+
+body.darkmode footer {
+background-color: var(--darkheader);
+color: var(--darkfontsoft);
+}
+
+body.darkmode header {
+  background-color: var(--darkheader);
+}
+
+
+header, footer, main{
+transition: background-color 0.3s, color 0.3s;
+}
+
+body.darkmode .menu li a:hover {
+  color: var(--main);
+}
+
+
+body.darkmode .footerheseg a:hover {
+  color: var(--main);
+}
+
+body.darkmode main{
+  background-color: black;
+}
+
+
+
+
+/* gar utasni hesegt nuuh*/
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-header{
+  display: none;
+}
+
+.footer-header .toggle-icon {
+  display: none;
+}
+
+.footer-content {
+  max-height: none;
+  overflow: visible;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px;
+  color: var(--footerfont);
+  font-size: 0.9rem;
+}
+
+/* gar utas header */
+
+@media screen and (max-width: 768px) {
+  .header {
+      display: none;
+  }
+
+  .mobile-header {
+    padding: 0.5rem 1rem;
+    position: fixed;
+    display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--headercolor);
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+  }
+  .mobile-header ul{
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-header ul li{
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+/* media gar utas dood menu*/
+@media screen and (max-width: 768px) {
+  .mobile-nav {
+    display: block; /* mobile nav haruulah*/
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--headercolor);
+    padding: 12px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .mobile-nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .mobile-nav a {
+    text-decoration: none;
+    color: var(--fontcolor);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-nav .icon {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav a.active {
+    color: var(--main);
+  }
+
+  main {
+    padding-top: 60px;
+    padding-bottom: 70px; 
+  }
+}
+
+
+/* Mobile Footer Styles */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+
+  .footerheseg {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-section {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+
+  .footer-header .toggle-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-header.active .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .footer-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .footer-content.active {
+    max-height: 500px;
+  }
+
+  .footer-content ul {
+    padding: 0 20px 15px 20px;
+    margin: 0;
+  }
+
+  .footer-content li {
+    padding: 8px 0;
+  }
+
+  /* Darkmode mobile */
+  body.darkmode .footer-section {
+    border-color: var(--darkheader);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  body.darkmode .mobile-nav, 
+  body.darkmode .mobile-header{
+      background-color: var(--darkheader);
+      transition: background-color 0.3s, color 0.3s;
+  }
+  body.darkmode .mobile-nav a{
+      color: var(--darkfont);
+  }
+}
+
+
+main{
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+
+.blog-category h2 {
+    margin-bottom: 0.5rem;
+    color: #FD9545;
+    margin-left: 2rem;
+}
+
+.blogs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.blog-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 12rem;
+    width: 12rem;
+    background-color: #D9D9D9;
+}
+
+.blog-img{
+  height: 70%;
+  width: 100%;
+}
+
+p{
+  font-size: 70%;
+}
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= blog.title %></title>
+    <link rel="stylesheet" href="/css/Blogs.css">
+</head>
+<body>
+    <main>
+        <section class="Blog">
+            <article class="main-blog">
+                <h2><%= blog.title %></h2>
+                <img src="<%= blog.image %>" alt="Main Blog Image" class="main-blog-img">
+                <p>By <%= blog.author %></p>
+                <p><%= blog.content %></p>       
+            </article>
+
+            <section class="blogs">
+                <h4>Төстэй бичвэрүүд</h4>
+                <% similarBlogs.forEach(similar => { %>
+                    <div class="similar-blog">
+                        <img src="<%= similar.image %>" class="sim-blog-img">
+                        <p><a href="/blog/<%= similar.id %>"><%= similar.title %></a></p>
+                    </div>
+                <% }); %>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
