@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Altai Trails</title>
+    <link rel="stylesheet" href="../css/Login.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html"><img src="../images/Logo.svg" class="logo">
+                <span class="logoname">AltaiTrails.mn</span></a>
+        </div>
+        <nav class="header-right">
+            <ul class="menu">
+                <li>
+                    <input type="text" placeholder="Хайх.." class="search">
+                </li>
+                <li><a href="search.html" class="aylal">Аялал</a></li>
+                <li><a href="#" class="blog">Блог</a></li>
+                <li><a href="hadgalsan.html" class="hadgalsan">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="svg">
+                                <path
+                                    d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
+                                </path>
+                            </svg></i>
+                        <span>
+                            Хадгалсан
+                        </span>
+                    </a></li>
+                <li>
+                    <a href="login.html" class="login">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="svg">
+                                <path
+                                    d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
+                                </path>
+                            </svg></i>
+                        <span>
+                            Нэвтрэх
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <button id="dark-mode" class="dark-mode-btn">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon" style="display: none;">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Login Section -->
+            <section id="login-section" class="login-section">
+                <h1>Нэвтрэх</h1>
+                <form onsubmit="event.preventDefault(); loginUser();">
+                    <input id="login-email" class="input" type="text" placeholder="И-мэйл">
+                    <input id="login-password" class="input" type="password" placeholder="Нууц үг">
+                    <button type="submit" class="Log-in">Нэвтрэх</button>
+                    <p>Эсвэл</p>
+                    <button type="button" class="create" onclick="showRegister()">Бүртгэл үүсгэх</button>
+                </form>
+            </section>
+
+            <!-- Register Section (Hidden by Default) -->
+            <section id="register-section" class="register-section hidden">
+                <h1>Бүртгэл үүсгэх</h1>
+                <form>
+                    <input id="reg-name" class="input" type="text" placeholder="Нэр">
+                    <input id="reg-email" class="input" type="email" placeholder="И-мэйл">
+                    <input id="reg-password" class="input" type="password" placeholder="Нууц үг">
+                    <button type="button" class="create" onclick="registerUser()">Бүртгэл үүсгэх</button>
+                    <p>Буцах</p>
+                    <button type="button" class="back" onclick="showLogin()">Буцах</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbwp3MC2k6zRngzgdTJLd3tfrhiGrKvWS_DiaeL1HrMMPXX5aHlHcNWtabuVsfr_57qE8g/exec'; // Replace with your Web App URL
+
+        function showRegister() {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('register-section').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('register-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+
+        function registerUser() {
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+
+            fetch(webAppUrl, {
+                method: 'POST',
+                body: JSON.stringify({
+                    action: 'register',
+                    name: name,
+                    email: email,
+                    password: password,
+                }),
+            })
+                .then((response) => response.text())
+                .then((message) => {
+                    alert(message);
+                    showLogin();
+                })
+                .catch((error) => alert('Error: ' + error));
+        }
+
+        function loginUser() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            fetch(webAppUrl, {
+                method: 'POST',
+                body: JSON.stringify({
+                    action: 'login',
+                    email: email,
+                    password: password,
+                }),
+            })
+                .then((response) => response.text())
+                .then((message) => {
+                    console.log('Login Response:', message); // Log the response
+                    if (message === 'Login successful') {
+                        window.location.href = 'Profile.html'; // Redirect to Main.html
+                    } else {
+                        alert('Invalid credentials. Please try again.');
+                    }
+                })
+                .catch((error) => alert('Error: ' + error));
+        }
+    </script>
+    <footer>
+        <div class="footerheseg">
+            <div class="footer-section">
+                <div class="footer-header">
+                    <h3 class="footergarchig">Joinme.mn</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#">Бидний тухай</a></li>
+                        <li><a href="#">Үйлчилгээний нөхцөл</a></li>
+                        <li><a href="#">Нууцлалын бодлого</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-header">
+                    <h3 class="footergarchig">Тусламж</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#">Аялал хэрхэн захиалах вэ?</a></li>
+                        <li><a href="#">Аялалын төлбөрийн боломжууд</a></li>
+                        <li><a href="#">Байгууллага хамт олны аялал</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-header">
+                    <h3 class="footergarchig">Миний булан</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#">Улаанбаатар</a></li>
+                        <li><a href="#">Холбоо барих</a></li>
+                        <li><a href="#">Instagram: @Altaitrails_</a></li>
+                        <li><a href="#">Facebook: Altaitrails</a></li>
+                        <li><a href="#">Утас: 9999999</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2025. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН
+        </div>
+    </footer>
+
+
+    <!--mobile hesgiin html menu-- >
+
+            <nav class="mobile-header">
+                <ul class="menu">
+                    <li>
+                        <button id="dark-mode-mobile" class="dark-mode-btn">
+                            <span class="icon sun">☀️</span>
+                            <span class="icon moon" style="display: none;">🌙</span>
+                        </button>
+                    </li>
+                    <li>
+                        <img src="../images/Logo.svg" class="logo">
+                        <span class ="logoname">AltaiTrails.mn</span>
+                    </li>
+                    <li>
+                        <a href="login.html" class="login">
+                            <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="svg">
+                                <path
+                                    d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
+                                </path>
+                            </svg></i>
+                            <span>
+                                Нэвтрэх
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="mobile-nav">
+                <ul>
+                    <li>
+                        <a href="index.html" class="active">
+                            <span class="icon">🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="searchmobi">
+                        <a href="#">
+                            <span class="icon">🔍</span>
+                            <span>Хайх</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blog.html">
+                            <span class="icon">📝</span>
+                            <span>Блог</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="hadgalsan.html">
+                            <span class="icon">❤️</span>
+                            <span>Хадгалсан</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <script src="../js/java.js"></script>
+        </body>
+
+</html >
