@@ -16,14 +16,14 @@
     background-color: rgb(141, 102, 79);
 }
    
-.tours{
+#aylluud{
     margin-top: 50px;
         display: grid;
         gap: 10px;
         grid-template-columns: auto auto auto;
         padding: 10px;
 }
-.aylal img{
+article img{
     height: 300px;
     width: 400px;
 }

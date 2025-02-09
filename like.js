@@ -21,9 +21,6 @@ class like extends HTMLElement {
                     too.innerText = this.reacted ? --cnt : ++cnt;
                     this.reacted = !this.reacted;
 
-                    //yag heregtei component ni 
-                    // this.parentElement
-         
                     const evnt = new CustomEvent("shp-reacted",
                         {
                             detail: {
@@ -48,4 +45,4 @@ class like extends HTMLElement {
 
 }
 
-window.customElements.define('shp-reaction', like);
+window.customElements.define('shp-reaction', like); 
