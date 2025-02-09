@@ -23,7 +23,7 @@ export default class Aylal {
           <p class="itemPrice">💰 ${this.une.toLocaleString()} ₮</p>
         </a>
         <span class="doodheseg">
-          <button class="addHadgalsan" onclick="addProduct(${this.id})">
+          <button class="addHadgalsan" onclick="addHadgalsan(${this.id})">
             <span class="iconheart">🧡</span>
           </button>
           <button class="addSags">

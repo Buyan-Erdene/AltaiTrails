@@ -1,61 +1,53 @@
 
     import Baraa from './baraa.js';
 
-    // Function to calculate total price
-    function calculateTotalPrice(items) {
-      return items.reduce((total, item) => total + item.price, 0);
+    function niitUne(items) {
+      return items.reduce((total, item) => total + item.price, 0); 
     }
 
-    // Function to format price with thousand separators
-    function formatPrice(price) {
+    function taslalNemeh(price) {
       return price.toLocaleString();
     }
 
-    // Function to update total price display
-    function updateTotalPrice(items) {
-      const totalPrice = calculateTotalPrice(items);
-      document.getElementById('total-price').textContent = formatPrice(totalPrice);
+    function niitUniigShinechleh(items) {
+      const niitune = niitUne(items);
+      document.getElementById('total-price').textContent = taslalNemeh(niitune);  
     }
 
-    // Function to render saved items
-    function renderHadgalsanItems() {
-      const hadgalsanItems = JSON.parse(localStorage.getItem('hadgalsan')) || [];
-      const hadgalsanItemsElement = document.getElementById('hadgalsan-items');
+    function renderHadgalsanAylluud() {
+      const hadgalsanAylluud = JSON.parse(localStorage.getItem('hadgalsan')) || [];  //localaas duudaj gargah
+      const hadgalsanAylalElement = document.getElementById('hadgalsan-items');
 
-      if (hadgalsanItems.length === 0) {
-        hadgalsanItemsElement.innerHTML = `<p>Хадгалсан бараа байхгүй байна.</p>`;
-        updateTotalPrice([]); // Update total price to 0
+      if (hadgalsanAylluud.length === 0) {
+        hadgalsanAylalElement.innerHTML = `<p>Хадгалсан бараа байхгүй байна.</p>`;
+        niitUniigShinechleh([]);
       } else {
-        hadgalsanItemsElement.innerHTML = hadgalsanItems
+        hadgalsanAylalElement.innerHTML = hadgalsanAylluud
           .map(item => new Baraa(item).render())
           .join('');
-        updateTotalPrice(hadgalsanItems); // Update total price with current items
+        niitUniigShinechleh(hadgalsanAylluud);
       }
     }
 
-    // Function to delete an item
-    function deleteItem(itemId) {
-      let hadgalsanItems = JSON.parse(localStorage.getItem('hadgalsan')) || [];
-      hadgalsanItems = hadgalsanItems.filter(item => item.id.toString() !== itemId.toString());
-      localStorage.setItem('hadgalsan', JSON.stringify(hadgalsanItems));
-      renderHadgalsanItems(); // This will also update the total price
+    function aylalUstgah(aylal) {
+      let hadgalsanAylluud = JSON.parse(localStorage.getItem('hadgalsan')) || [];
+      hadgalsanAylluud = hadgalsanAylluud.filter(item => item.id.toString() !== aylal.toString());
+      localStorage.setItem('hadgalsan', JSON.stringify(hadgalsanAylluud));
+      renderHadgalsanAylluud();
       alert('Бараа устгагдлаа.');
     }
 
-    // Event delegation for delete buttons
-    document.getElementById('hadgalsan-items').addEventListener('click', (event) => {
+    document.getElementById('hadgalsan-items').addEventListener('click', (event) => { //daragdsan aylliin id oloh
       if (event.target.classList.contains('ustgahTovch')) {
-        const itemId = event.target.dataset.id;
-        deleteItem(itemId);
+        const aylal = event.target.dataset.id;
+        aylalUstgah(aylal);
       }
     });
 
-    // Function to delete all items
-    document.getElementById('delete-all').addEventListener('click', () => {
+    document.getElementById('delete-all').addEventListener('click', () => {  //bugdiig ustgah
       localStorage.removeItem('hadgalsan');
-      renderHadgalsanItems(); // This will also update the total price
+      renderHadgalsanAylluud();
       alert('Бүх бараа устгагдлаа.');
     });
 
-    // Render saved items when the page loads
-    renderHadgalsanItems();
+    renderHadgalsanAylluud();

@@ -2,90 +2,82 @@ import Aylluud from "./aylalUusgeh.js";
 import { loadData as loadSags } from "./aylalUusgeh.js";
 
 const sagsData = await loadSags();
-console.log("Loaded sagsData:", sagsData);
+console.log("Data:", sagsData);
 
-const sagsHTML = (new Aylluud({ record: sagsData })).render();
+const sagsHTML = (new Aylluud({ record: sagsData })).render();  //sagsdata ashiglan object uusgeh
 
 document
-    .getElementById("aylluud")  
-    .insertAdjacentHTML("beforeEnd", sagsHTML);
+    .getElementById("aylluud")  //aylluud elementiig avna
+    .insertAdjacentHTML("beforeEnd", sagsHTML);  //baigaa item iin ard html iig nemne
 
-const renderTours = (filteredData) => {
-    const aylluudElement = document.getElementById("aylluud");
-
-    if (!aylluudElement) {
-        console.error("The 'aylluud' element is missing from the page.");
-        return;
-    }
-
-    const sagsHTML = new Aylluud({ record: filteredData }).render();
-    aylluudElement.innerHTML = sagsHTML;
+const renderAylal = (filteredData) => {   //shuugdsen ogogdliig html eer haruulah
+    const aylluudElement = document.getElementById("aylluud");   //
+    const sagsHTML = new Aylluud({ record: filteredData }).render();  //filtered data Aylluud class iin object bolno. renderlene
+    aylluudElement.innerHTML = sagsHTML; //odoogiin html iin orond shine html iig haruulna
 };
 
-const filterTours = () => {
-    const selectedMonth = document.getElementById("travel-month").value;
-    const selectedDuration = document.getElementById("duration").value;
-    const selectedLocation = document.getElementById("location").value;
-    const selectedType = document.getElementById("type").value;
-    const selectedPrice = document.getElementById("price").value;
+const filterAylal = () => {  //shuult hiih utguudiig avna
+    const Sar = document.getElementById("travel-month").value;
+    const hugatsaa = document.getElementById("duration").value;
+    const bairshil = document.getElementById("location").value;
+    const torol = document.getElementById("type").value;
+    const une = document.getElementById("price").value;
 
-    const filteredData = sagsData.filter(tour => {
-        const matchesMonth = selectedMonth ? tour.month === selectedMonth : true;
-        const matchesDuration = tour.duration <= selectedDuration;
-        const matchesLocation = selectedLocation ? tour.location === selectedLocation : true;
-        const matchesType = selectedType ? tour.type === selectedType : true;
-        const matchesPrice = tour.price <= selectedPrice;
+    const filteredData = sagsData.filter(tour => {  //nohtsoluud tohirch bga esehiig shalgana
+        const sarTaarah = Sar ? tour.month === Sar : true;
+        const hugatsaaTaarah = tour.duration <= hugatsaa;
+        const bairshilTaarah = bairshil ? tour.location === bairshil : true;
+        const torolTaatah = torol ? tour.type === torol : true;
+        const uneTaarah = tour.price <= une;
 
-        return matchesMonth && matchesDuration && matchesLocation && matchesType && matchesPrice;
+        return sarTaarah && hugatsaaTaarah && bairshilTaarah && torolTaatah && uneTaarah;
     });
 
-    renderTours(filteredData);
+    renderAylal(filteredData);  //shuugdsen aylluudiig renderlej haruulna
 
-    const url = new URL(window.location);
-    if (selectedMonth) url.searchParams.set("month", selectedMonth);
-    if (selectedLocation) url.searchParams.set("location", selectedLocation);
-    if (selectedType) url.searchParams.set("type", selectedType);
-    if (selectedPrice) url.searchParams.set("price", selectedPrice);
+    const url = new URL(window.location);  //odoogiin url iig avna
+    if (Sar) url.searchParams.set("month", Sar);  //url shuultiin utguudiig nemne
+    if (bairshil) url.searchParams.set("location", bairshil);
+    if (torol) url.searchParams.set("type", torol);
+    if (une) url.searchParams.set("price", une);
     window.history.replaceState({}, "", url);
 };
 
-document.getElementById("travel-month").addEventListener("change", filterTours);
-document.getElementById("duration").addEventListener("input", function() {
+document.getElementById("travel-month").addEventListener("change", filterAylal);  //eventlistener uug nemne
+document.getElementById("duration").addEventListener("input", function () {
     document.getElementById("duration-value").textContent = this.value;
-    filterTours();
+    filterAylal();
 });
-document.getElementById("location").addEventListener("change", filterTours);
-document.getElementById("type").addEventListener("change", filterTours);
-document.getElementById("price").addEventListener("input", function() {
+document.getElementById("location").addEventListener("change", filterAylal);
+document.getElementById("type").addEventListener("change", filterAylal);
+document.getElementById("price").addEventListener("input", function () {
     document.getElementById("price-value").textContent = this.value;
-    filterTours();
+    filterAylal();
 });
 
-window.addEventListener("load", () => {
-    const params = new URLSearchParams(window.location.search);
-    const monthParam = params.get("month");
-    const locationParam = params.get("location");
-    const typeParam = params.get("type");
-    const priceParam = params.get("price");
+window.addEventListener("load", () => {  //huudas achaalahad
+    const params = new URLSearchParams(window.location.search);  //url aas shuultiin utguudiig avna
+    const sarParam = params.get("month");
+    const bairshilParam = params.get("location");
+    const torolParam = params.get("type");
+    const uneParam = params.get("price");
 
-    if (monthParam) {
-        document.getElementById("travel-month").value = monthParam;
+    if (sarParam) {   // url iin utguudiig haih hesguuded tohiruulna
+        document.getElementById("travel-month").value = sarParam;
     }
-    if (locationParam) {
-        document.getElementById("location").value = locationParam;
+    if (bairshilParam) {
+        document.getElementById("location").value = bairshilParam;
     }
-    if (typeParam) {
-        document.getElementById("type").value = typeParam;
+    if (torolParam) {
+        document.getElementById("type").value = torolParam;
     }
-    if (priceParam) {
-        document.getElementById("price").value = priceParam;
+    if (uneParam) {
+        document.getElementById("price").value = uneParam;
     }
 
-    console.log("Loaded filter params:", monthParam, locationParam, typeParam, priceParam);
-
-    if (sagsData && sagsData.length > 0) {
-        renderTours(sagsData);
+    if (sagsData && sagsData.length > 0) {  //aylluud bval renderlej haruulna
+        renderAylal(sagsData);
     } else {
-        console.error("No data available to render.");
+        console.error("Аялал байхгүй.");
     }
 });
