@@ -1,4 +1,4 @@
-import Aylal from "./aylal.js";
+import Aylal from "aylal.js";
 
 export default class Aylluud {
     constructor(sagsData) {

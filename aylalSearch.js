@@ -1,5 +1,5 @@
-import Aylluud from "./aylalUusgeh.js";
-import { loadData as loadSags } from "./aylalUusgeh.js";
+import Aylluud from "aylalUusgeh.js";
+import { loadData as loadSags } from "aylalUusgeh.js";
 
 const sagsData = await loadSags();
 console.log("Data:", sagsData);

@@ -1,5 +1,5 @@
 
-    import Aylluud, { loadData } from './aylalUusgeh.js';
+    import Aylluud, { loadData } from 'aylalUusgeh.js';
 
     window.addHadgalsan = (productId) => {   //hadgalah tovch darah uyd
       const aylal = window.productData.find(item => item.id === productId);  //daragdsan ite iin id g avna

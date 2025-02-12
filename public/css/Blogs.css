@@ -20,6 +20,8 @@
 
 
 
+
+
 .header {
   position: fixed;
   top: 0;
@@ -186,6 +188,9 @@ body.darkmode p{
   color: var(--darkfont);
 }
 
+body.darkmode h2{
+  color: var(--darkfont);
+}
 
 
 /* gar utasni hesegt nuuh*/
@@ -376,7 +381,13 @@ main{
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
-    height: 100vh;
+    margin-top: 20vh;
+}
+
+main{
+  height: 220vh;
+  display: flex;
+  align-items: flex-start;
 }
 
 
