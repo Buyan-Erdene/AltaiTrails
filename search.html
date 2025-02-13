@@ -9,100 +9,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<script type="module" src="javascript/huudas/search.js"></script>
+<script type="module" src="javascript/components/footer-comp.js"></script>
+    <script type="module" src="javascript/components/header-comp.js"></script>
+    <script type="module" src="javascript/components/aylal-comp.js"></script>
+    <script type="module" src="javascript/components/add-hadgalah.js"></script>
+    <script src="javascript/modules/cart-Manager.js"></script>
+    <script type="module" src="javascript/huudas/hadgalah.js"></script>
+    <script type="module" src="javascript/components/search-form.js"></script>
 </head>
 
+
 <body>
-    <header class="header">
-        <div class="header-left">
-            <a href="index.html"><img src="logo.png" class="logo">
-                <span class="logoname">AltaiTrails.mn</span></a>
-        </div>
-        <nav class="header-right">
-            <ul class="menu">
-                <li>
-                    <input type="text" placeholder="Хайх.." class="search">
-                </li>
-                <li><a href="search.html" class="aylalhaih">Аялал</a></li>
-                <li><a href="#" class="blog">Блог</a></li>
-                <li><a href="hadgalsan.html" class="hadgalsan">
-                        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                class="svg">
-                                <path
-                                    d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
-                                </path>
-                            </svg></i>
-                        <span>
-                            Хадгалсан
-                        </span>
-                    </a></li>
-                <li>
-                    <a href="login.html" class="login">
-                        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                class="svg">
-                                <path
-                                    d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
-                                </path>
-                            </svg></i>
-                        <span>
-                            Нэвтрэх
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <button id="dark-mode" class="dark-mode-btn">
-                        <span class="icon sun">☀️</span>
-                        <span class="icon moon" style="display: none;">🌙</span>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header-comp></header-comp>
 
 
     <main>
         <aside class="zuun">
             <h2 class="garchig">Ангилал</h2>
-            <label class="garchig" for="travel-month">Аялах сар</label>
-            <select id="travel-month">
-                <option value="">Аялах сараа сонгоно уу</option>
-                <option value="january">1-р сар</option>
-                <option value="february">2-р сар</option>
-                <option value="march">3-р сар</option>
-                <option value="april">4-р сар</option>
-                <option value="may">5-р сар</option>
-                <option value="june">6-р сар</option>
-                <option value="july">7-р сар</option>
-                <option value="august">8-р сар</option>
-                <option value="september">9-р сар</option>
-                <option value="october">10-р сар</option>
-                <option value="november">11-р сар</option>
-                <option value="december">12-р сар</option>
-            </select>
-
-            <label class="garchig" for="duration">Үргэлжлэх Хугацаа: <span id="duration-value">15</span> хоног</label>
-            <input type="range" id="duration" name="duration" min="1" max="30" value="15">
-
-            <label class="garchig" for="location">Аялах Газар</label>
-            <select id="location">
-                <option value="">Аялах газраа сонгоно уу</option>
-                <option value="Ulaanbaatar">Улаанбаатар</option>
-                    <option value="Erdenet">Эрдэнэт</option>
-                    <option value="Darkhan">Дархан</option>
-                    <option value="Altai">Алтай</option>
-                    <option value="Gobi">Говь</option>
-            </select>
-    
-            <label class="garchig" for="type">Аяллын төрөл</label>
-            <select id="type">
-                <option value="">Аяллын төрлөө сонгоно уу</option>
-                <option value="adventure">Адал явдалт</option>
-                <option value="family">Гэр бүлийн</option>
-                <option value="group">Групп аялал</option>
-                <option value="kids">Хүүхдийн аялал</option>
-            </select>
-    
-            <label class="garchig" for="price">Үнэ: <span id="price-value">500000</span> ₮</label>
-            <input type="range" id="price" name="price" min="50000" max="1000000" value="500000">
+            <search-form></search-form>
         </aside>
 
         <section class="baruun">
@@ -113,57 +39,7 @@
     </main>
 
 
-    <footer>
-        <div class="footerheseg">
-            <div class="footer-section">
-                <div class="footer-header">
-                    <h3 class="footergarchig">Joinme.mn</h3>
-                    <span class="toggle-icon">▼</span>
-                </div>
-                <div class="footer-content">
-                    <ul>
-                        <li><a href="#">Бидний тухай</a></li>
-                        <li><a href="#">Үйлчилгээний нөхцөл</a></li>
-                        <li><a href="#">Нууцлалын бодлого</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <div class="footer-header">
-                    <h3 class="footergarchig">Тусламж</h3>
-                    <span class="toggle-icon">▼</span>
-                </div>
-                <div class="footer-content">
-                    <ul>
-                        <li><a href="#">Аялал хэрхэн захиалах вэ?</a></li>
-                        <li><a href="#">Аялалын төлбөрийн боломжууд</a></li>
-                        <li><a href="#">Байгууллага хамт олны аялал</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <div class="footer-header">
-                    <h3 class="footergarchig">Миний булан</h3>
-                    <span class="toggle-icon">▼</span>
-                </div>
-                <div class="footer-content">
-                    <ul>
-                        <li><a href="#">Улаанбаатар</a></li>
-                        <li><a href="#">Холбоо барих</a></li>
-                        <li><a href="#">Instagram: @Altaitrails_</a></li>
-                        <li><a href="#">Facebook: Altaitrails</a></li>
-                        <li><a href="#">Утас: 9999999</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            © 2025. БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН
-        </div>
-    </footer>
+    <footer-comp></footer-comp>
 
 
     <!-- mobile hesgiin html menu -->
@@ -331,9 +207,6 @@
         </div>
     </div>
 
-    <script src="java.js"></script>
-    <script type="module" src="aylalSearch.js"></script>
-    <script type="module" src="aylalHadgalah.js"></script>
 </body>
 
 </html>

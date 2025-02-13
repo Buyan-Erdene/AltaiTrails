@@ -28,57 +28,12 @@ main{
     padding: 0 1rem;
 }
 
-article{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2rem;
-    background-color: var(--sectioncolor);
-    display: flex;
-    border-radius: 1rem;
-}
-
-.baraa a {
-    display: flex;
-    text-decoration: none;
-    width: 100%;
-}
-
-.baraa img{
-    height: 12rem;
-    width: 30%;
-    border-radius: 1rem;
-}
-
-.baraa .garchig {
-    display: flex;
-    flex-direction: column;
-}
-
-.baraa .itemTitle {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: var(--fontcolor)
-}
-
-.baraa .medeelel {
-    margin: 1rem 0;
+#cart-items {
     display: grid;
+    gap: 2rem;
     grid-template-columns: auto auto;
-    gap: 1rem;
-}
-
-.baraa .itemDescription,
-.baraa .itemLocation,
-.baraa .itemDuration,
-.baraa .itemPrice {
-    font-size: 1rem;
-    color: var(--fontcolor);
-}
-
-.baraa .doodheseg {
-    display: flex;
-    align-items: end;
-}
+    padding: 1rem;
+  }
 
 .ustgahTovch{
     right: 0;
