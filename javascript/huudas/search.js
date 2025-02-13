@@ -1,4 +1,4 @@
-// index.js
+
 import { fetchAylalData } from "../modules/fetchaylal.js";
 import { renderAylal } from "../modules/renderAylluud.js";
 import { transformAylalData } from "../modules/transformAylal.js";
@@ -10,7 +10,6 @@ async function indexAylluud() {
         const data = await fetchAylalData();
         console.log("Fetched Data:", data);
         sagsData = Array.isArray(data) ? data.map(transformAylalData) : (data.aylluud || []).map(transformAylalData);
-        console.log("Transformed Data:", sagsData);
         
         const container = document.getElementById("aylluud");
         if (!container) {
@@ -23,7 +22,6 @@ async function indexAylluud() {
     }
 }
 
-// Шүүлтүүр функц
 const filterAylal = (searchParams) => {
     const filteredData = sagsData.filter(tour => {
         const sarTaarah = searchParams.month ? tour.month === searchParams.month : true;
@@ -38,7 +36,6 @@ const filterAylal = (searchParams) => {
     const container = document.getElementById("aylluud");
     renderAylal(container, filteredData);
 
-    // URL параметрүүдийг шинэчлэх
     const url = new URL(window.location);
     Object.entries(searchParams).forEach(([key, value]) => {
         if (value) {
@@ -50,7 +47,6 @@ const filterAylal = (searchParams) => {
     window.history.replaceState({}, "", url);
 };
 
-// URL параметрүүдийг search-form руу оруулах
 function setInitialSearchParams() {
     const searchForm = document.querySelector('search-form');
     if (!searchForm) return;
@@ -64,18 +60,15 @@ function setInitialSearchParams() {
         price: params.get("price") || "500000"
     };
 
-    // Custom event ашиглан search-form руу параметрүүдийг дамжуулах
     searchForm.dispatchEvent(
         new CustomEvent('setParams', { detail: searchParams })
     );
 }
 
-// Хуудас ачаалагдахад
 document.addEventListener("DOMContentLoaded", async () => {
     await indexAylluud();
     setInitialSearchParams();
 
-    // search-form-оос ирэх хайлтын үйлдлийг сонсох
     const searchForm = document.querySelector('search-form');
     if (searchForm) {
         searchForm.addEventListener('search', (event) => {

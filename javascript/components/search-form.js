@@ -1,4 +1,3 @@
-// search-form.js
 class SearchForm extends HTMLElement {
     constructor() {
         super();
@@ -9,7 +8,6 @@ class SearchForm extends HTMLElement {
         this.render();
         this.setupEventListeners();
         
-        // setParams эвентийг сонсох
         this.addEventListener('setParams', (event) => {
             this.setSearchParams(event.detail);
         });
@@ -35,12 +33,10 @@ class SearchForm extends HTMLElement {
     setupEventListeners() {
         const shadow = this.shadowRoot;
         
-        // Хайлтын товчны event listener
         shadow.querySelector(".search-button").addEventListener("click", () => {
             this.handleSearch();
         });
 
-        // Range input-уудын утгыг харуулах
         shadow.querySelector("#duration").addEventListener("input", (e) => {
             shadow.querySelector("#duration-value").textContent = e.target.value;
             this.handleSearch();
@@ -51,7 +47,6 @@ class SearchForm extends HTMLElement {
             this.handleSearch();
         });
 
-        // Select elements-үүдийн өөрчлөлтийг сонсох
         ['travel-month', 'location', 'type'].forEach(id => {
             shadow.getElementById(id).addEventListener('change', () => this.handleSearch());
         });
@@ -77,10 +72,6 @@ class SearchForm extends HTMLElement {
         }));
     }
 
-    // Your existing render() method stays the same
-    
-    
-    // Компонентийн HTML болон CSS
     render() {
         this.shadowRoot.innerHTML = `
         <style>
@@ -170,5 +161,4 @@ class SearchForm extends HTMLElement {
             }
 }
 
-// Компонентийг бүртгэх
 customElements.define('search-form', SearchForm);

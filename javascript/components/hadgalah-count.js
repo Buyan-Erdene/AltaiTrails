@@ -10,19 +10,16 @@ class HadgalsanCount extends HTMLElement {
     this.render();
     this.updateCount();
     
-    // Сагсны өөрчлөлтийг мэдээлэх
     cartManager.subscribe(() => {
       this.updateCount();
     });
   }
 
-  // Сагсанд байгаа барааны тоог шинэчлэх
   updateCount() {
     const count = cartManager.getCount();
     this.shadowRoot.querySelector('#count').textContent = count;
   }
 
-  // Компонентийг харуулах
   render() {
     this.shadowRoot.innerHTML = `
       <style>

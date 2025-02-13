@@ -6,7 +6,7 @@ class AddHadgalah extends HTMLElement {
 
     connectedCallback() {
         this.id = this.getAttribute("did");
-        this.hadgalsan = cartManager.cart.includes(this.id); // cartManager-ийг ашиглах
+        this.hadgalsan = cartManager.cart.includes(this.id); 
         this.render();
         this.addEventListener("click", this.hadgalahbutton.bind(this));
     }
@@ -15,12 +15,12 @@ class AddHadgalah extends HTMLElement {
         const aylalId = this.id;
 
         if (this.hadgalsan) {
-            cartManager.removeItem(aylalId); // cartManager-ийг ашиглах
+            cartManager.removeItem(aylalId); 
         } else {
-            cartManager.addItem(aylalId); // cartManager-ийг ашиглах
+            cartManager.addItem(aylalId); 
         }
 
-        this.hadgalsan = cartManager.cart.includes(this.id); // cartManager-ийг ашиглах
+        this.hadgalsan = cartManager.cart.includes(this.id); 
         this.updateButton();
 
         const event = new CustomEvent("aylal-hadgalah", {

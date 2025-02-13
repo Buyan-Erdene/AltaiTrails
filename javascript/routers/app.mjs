@@ -1,16 +1,14 @@
 import express from 'express';
-import cors from 'cors'; // Import the cors package
+import cors from 'cors';
 import aylluudRouter from './aylluudRouter.mjs';
 
 const app = express();
 const PORT = 3001;
 
-// Enable CORS for all routes
 app.use(cors());
 
 app.use(express.json());
 
-// Use the aylluud router
 app.use('/api', aylluudRouter);
 
 app.listen(PORT, () => {
@@ -35,7 +33,7 @@ const options = {
             },
         ],
     },
-    apis: ['./routers/*.mjs'], // API endpoint-уудыг агуулсан файлууд
+    apis: ['./routers/*.mjs'], 
 };
 
 const specs = swaggerJsdoc(options);

@@ -1,12 +1,14 @@
-        class HudaldanAvalt extends HTMLElement {
-            constructor() {
-                super();
-                const template = document.getElementById("hudaldan-avalt-template").content;
-                const shadowRoot = this.attachShadow({ mode: "open" });
-                shadowRoot.appendChild(template.cloneNode(true));
-            } connectedCallback() {
-                const template = document.createElement("template");
-                template.innerHTML = `
+class HudaldanAvalt extends HTMLElement {
+    constructor() {
+        super();
+        const template = document.getElementById("hudaldan-avalt-template").content;
+        const shadowRoot = this.attachShadow({ mode: "open" });
+        shadowRoot.appendChild(template.cloneNode(true));
+    }
+
+    connectedCallback() {
+        const template = document.createElement("template");
+        template.innerHTML = `
     <style>
         aside {
             border: 2px solid #ccc;
@@ -60,25 +62,31 @@
     </aside>
 `;
 
-const shadowRoot = this.shadowRoot;
-shadowRoot.appendChild(template.content.cloneNode(true));
+        const shadowRoot = this.shadowRoot;
+        shadowRoot.appendChild(template.content.cloneNode(true));
 
-const aylalData = JSON.parse(this.getAttribute('aylal-data'));
-const { name, price,} = aylalData;
+        const aylalData = JSON.parse(this.getAttribute('aylal-data'));
+        const { name, price } = aylalData;
 
-const nameSlot = document.createElement("span");
-nameSlot.setAttribute("slot", "aylal-name");
-nameSlot.textContent = name;
+        const nameSlot = document.createElement("span");
+        nameSlot.setAttribute("slot", "aylal-name");
+        nameSlot.textContent = name;
 
-// Сэтгэгдлийг slot-д оруулах
-const priceSlot = document.createElement("span");
-priceSlot.setAttribute("slot", "aylal-price");
-priceSlot.textContent = price;
+        const priceSlot = document.createElement("span");
+        priceSlot.setAttribute("slot", "aylal-price");
+        priceSlot.textContent = price;
 
-this.appendChild(nameSlot);
-this.appendChild(priceSlot);
+        this.appendChild(nameSlot);
+        this.appendChild(priceSlot);
 
-}
+        document.addEventListener('add-to-cart', this.handleAddToCart.bind(this));
+    }
+
+    handleAddToCart(event) {
+        const { aylalId, name, price } = event.detail;
+        console.log("Added to cart:", aylalId, name, price);
+        this.setAttribute('aylal-data', JSON.stringify({ name, price }));
+    }
 }
 
 customElements.define('hudaldan-avalt', HudaldanAvalt);

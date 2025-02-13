@@ -8,7 +8,7 @@ async function indexAylluud() {
     const transformedData = Array.isArray(data) ? data.map(transformAylalData) : (data.aylluud || []).map(transformAylalData);
 
     const container = document.getElementById("aylluud");
-    renderAylal(container, transformedData.slice(0, 6)); // Зөвхөн топ 6 харуулах
+    renderAylal(container, transformedData.slice(0, 6)); 
 }
 
 document.addEventListener("DOMContentLoaded", indexAylluud);

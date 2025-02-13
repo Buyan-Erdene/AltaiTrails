@@ -1,5 +1,5 @@
 import pg from 'pg';
-import Aylalavah from './aylalavah.mjs'; // Correct relative path
+import Aylalavah from './aylalavah.mjs'; 
 
 const client = new pg.Client({
     user: 'postgres',

@@ -1,7 +1,7 @@
-// cart-manager.js
+
 class CartManager {
     constructor() {
-        this.cart = JSON.parse(localStorage.getItem("cart")) || []; // Сагсны өгөгдөл
+        this.cart = JSON.parse(localStorage.getItem("cart")) || []; 
         this.subscribers = []; // Төлөвийн өөрчлөлтийг мэдэх хэрэгтэй компонентууд
     }
 
@@ -43,11 +43,10 @@ class CartManager {
         this.subscribers.forEach(callback => callback(this.cart));
     }
 
-    // Төлөвийн өөрчлөлтийг авах
+    //өөрчлөлтийг авах
     subscribe(callback) {
         this.subscribers.push(callback);
     }
 }
 
-// Global хувьсагч үүсгэх
 const cartManager = new CartManager();

@@ -148,39 +148,146 @@ footer{
 
 /* Dark Mode*/
 
-body.darkmode .header .logoname,
-body.darkmode .menu li a,
-body.darkmode .footergarchig,
-body.darkmode .svg{
+/* Dark Mode */
+body.dark-mode .header .logoname,
+body.dark-mode .menu li a,
+body.dark-mode .footergarchig,
+body.dark-mode .svg {
   color: var(--darkfont);
   fill: var(--darkfont);
 }
 
-
-body.darkmode footer {
+body.dark-mode footer {
   background-color: var(--darkheader);
   color: var(--darkfontsoft);
 }
 
-body.darkmode header {
+body.dark-mode header {
     background-color: var(--darkheader);
 }
 
+body.dark-mode .menu li a:hover {
+    color: var(--main);
+}
 
-header, footer{
+body.dark-mode .footerheseg a:hover {
+    color: var(--main);
+}
+
+/* Mobile Dark Mode */
+body.dark-mode .footer-section {
+  border-color: var(--darkheader);
+}
+
+body.dark-mode .mobile-nav, 
+body.dark-mode .mobile-header{
+    background-color: var(--darkheader);
+}
+
+body.dark-mode .mobile-nav a {
+    color: var(--darkfont);
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .header {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #ffffff;
+}
+
+body.dark-mode input {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+
+body.dark-mode main{
+  background-color: var(--darkbackground);
+  color: var(--darkfont);
+}
+
+.zuun, .baruun {
   transition: background-color 0.3s, color 0.3s;
 }
 
-body.darkmode .menu li a:hover {
-    color: var(--main);
-  }
+body.dark-mode .zuun,
+body.dark-mode .searchmain,
+body.dark-mode article , body.dark-mode aside, body.dark-mode div{
+  background-color: var(--darksection);
+  color: var(--darkfontsoft);
+}
+
+body.dark-mode .garchig{
+  background-color: var(--darkbackground);
+}
+
+body.dark-mode section a{
+  color: var(--darkfontsoft);
+}
+
+body.dark-mode ul li a{
+  color: var(--darkfontsoft);
+}
 
 
-  body.darkmode .footerheseg a:hover {
-    color: var(--main);
-  }
+
+/* Dark Mode for the search form */
+body.dark-mode .search-form {
+  background-color: var(--darkbackground);
+  color: var(--darkfont);
+  border: 1px solid var(--darkheader);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+body.dark-mode .search-form label {
+  color: var(--darkfontsoft);
+}
+
+body.dark-mode .search-form select,
+body.dark-mode .search-form input {
+  background-color: var(--darkbackground);
+  color: var(--darkfont);
+  border: 1px solid var(--darkheader);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+body.dark-mode .search-form select:focus,
+body.dark-mode .search-form input:focus {
+  outline: none;
+  border-color: var(--main);
+}
+
+body.dark-mode .search-form input[type="range"] {
+  background-color: var(--darkbackground);
+}
+
+body.dark-mode .search-form button.search-button {
+  background-color: var(--main);
+  color: var(--darkfont);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .search-form button.search-button:hover {
+  background-color: var(--main);
+  opacity: 0.8;
+}
 
 
+/* Add more dark mode styles as needed */
 
 /* gar utasni hesegt nuuh*/
 

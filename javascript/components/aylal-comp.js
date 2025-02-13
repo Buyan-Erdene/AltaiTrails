@@ -126,12 +126,20 @@ class AylalComp extends HTMLElement {
           </a>
           <span class="doodheseg">
               <add-hadgalah did="${id}"></add-hadgalah>
-              <a href="sags.html"><button class="addSags"></a>
+              <button class="addSags" id="addSags-${id}">
                   Захиалах
               </button>
           </span>
       </article>  
       `;
+
+      const addSagsButton = this.querySelector(`#addSags-${id}`);
+      addSagsButton.addEventListener('click', () => {
+          const event = new CustomEvent('add-to-cart', {
+              detail: { aylalId: id, name, price }
+          });
+          this.dispatchEvent(event);
+      });
   }
 }
 

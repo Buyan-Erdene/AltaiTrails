@@ -3,7 +3,6 @@ import { aylalavah} from '../database/connect.mjs';
 
 const router = express.Router();
 
-// GET all aylluud
 router.get('/aylluud', async (req, res) => {
     try {
         const aylluud = await aylalavah.aylluudAvah();
@@ -13,7 +12,6 @@ router.get('/aylluud', async (req, res) => {
     }
 });
 
-// GET a single ayllu by id
 router.get('/aylluud/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -24,14 +22,13 @@ router.get('/aylluud/:id', async (req, res) => {
         if (result.rows.length > 0) {
             res.json(result.rows[0]);
         } else {
-            res.status(404).json({ message: 'Ayllu not found' });
+            res.status(404).json({ message: 'Aylluud baihgui' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// POST a new ayllu
 router.post('/aylluud', async (req, res) => {
     try {
         const { name, description } = req.body;
@@ -47,7 +44,6 @@ router.post('/aylluud', async (req, res) => {
     }
 });
 
-// PUT (update) an existing ayllu
 router.put('/aylluud/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -62,14 +58,13 @@ router.put('/aylluud/:id', async (req, res) => {
         if (result.rows.length > 0) {
             res.json(result.rows[0]);
         } else {
-            res.status(404).json({ message: 'Ayllu not found' });
+            res.status(404).json({ message: 'Aylluud baihgui' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
-// DELETE an ayllu
 router.delete('/aylluud/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -79,9 +74,9 @@ router.delete('/aylluud/:id', async (req, res) => {
         `;
         const result = await aylalavah.client.query(query, [id]);
         if (result.rows.length > 0) {
-            res.json({ message: 'Ayllu deleted successfully' });
+            res.json({ message: 'Aylluud ustgagdlaa' });
         } else {
-            res.status(404).json({ message: 'Ayllu not found' });
+            res.status(404).json({ message: 'Aylluud oldsongui' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
