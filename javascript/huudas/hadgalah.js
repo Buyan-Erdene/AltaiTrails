@@ -3,36 +3,34 @@ import { renderAylal } from "../modules/renderAylluud.js";
 import { transformAylalData } from "../modules/transformAylal.js";
 
 async function loadCartItems() {
-    // Аяллын мэдээллийг серверээс авах
     const data = await fetchAylalData();
     const transformedData = Array.isArray(data) ? data.map(transformAylalData) : (data.aylluud || []).map(transformAylalData);
 
-    // cartManager-аас сагсанд байгаа барааны ID-уудыг авах
-    const cartItemIds = cartManager.cart; // cartManager.cart нь сагсанд байгаа барааны ID-уудыг агуулна
-
-    // transformedData-аас сагсанд байгаа бараануудыг шүүж авах
+    const cartItemIds = cartManager.cart;
     const cartItems = transformedData.filter(item => cartItemIds.includes(String(item.id)));
-
-    // Сагсанд байгаа бараануудыг харуулах
     const container = document.getElementById("cart-items");
-    container.innerHTML = ""; // Өмнөх элементүүдийг цэвэрлэх
+    container.innerHTML = ""; 
     renderAylal(container, cartItems);
-
-    updateTotalPrice(cartItems);
+    updateTotalCart(cartItems);
 }
 
-function updateTotalPrice(items) {
+function updateTotalCart(items) {
     const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
-    document.getElementById("total-price").textContent = totalPrice;
+    const totalCount = items.length;
+    const totalPriceElement = document.querySelector('total-price-comp');
+    if (totalPriceElement) {
+        totalPriceElement.updateTotalPrice(totalPrice);
+        totalPriceElement.updateTotalCount(totalCount);
+    }
 }
 
-// cartManager-д төлөвийн өөрчлөлтийг бүртгэх
-cartManager.subscribe(loadCartItems);
 
+
+cartManager.subscribe(loadCartItems);
 document.getElementById("delete-all").addEventListener("click", () => {
-    cartManager.cart = []; // Сагсыг хоослох
-    cartManager.saveToLocalStorage(); // LocalStorage-д хадгалах
-    cartManager.notifySubscribers(); // Төлөвийн өөрчлөлтийг мэдээлэх
+    cartManager.cart = [];
+    cartManager.saveToLocalStorage();
+    cartManager.notifySubscribers();
 });
 
 document.addEventListener("DOMContentLoaded", loadCartItems);

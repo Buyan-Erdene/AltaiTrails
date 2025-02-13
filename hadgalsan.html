@@ -16,6 +16,7 @@
     <script type="module" src="javascript/components/add-hadgalah.js"></script>
     <script src="javascript/modules/cart-Manager.js"></script>
     <script type="module" src="javascript/huudas/hadgalah.js"></script>
+    <script type="module" src="javascript/components/total-price-comp.js"></script>
 </head>
 <body>
     <header-comp></header-comp>
@@ -37,9 +38,9 @@
                 <h2>Захиалгын мэдээлэл</h2>
                 <ul>
                     <li>
-                        <div class="total-price-container">
-        <h3>Нийт үнэ: <span id="total-price">0</span> ₮</h3>
-      </div>
+                        <total-price-comp>
+                            <span slot="total-price">0</span>
+                        </total-price-comp>
                     </li>
                     <li>
                         <a href="sags.html"><button class="tovchluur">Төлбөр төлөх</button></a>
